@@ -30,7 +30,8 @@ public class ProjectService {
     public void updateProject(Long id,
                               String name,
                               String about,
-                              String url) {
+                              String url,
+                              String imageUrl) {
         Project project = projectRepository.findById(id).orElseThrow(() -> new IllegalStateException(
                 "Project with id " + id + "doesn't exist."
         ));
@@ -50,6 +51,10 @@ public class ProjectService {
             project.setUrl(url);
         }
 
+        if(imageUrl != null && imageUrl.length() > 0 &&
+                !Objects.equals(project.getUrl(), imageUrl)) {
+            project.setUrl(imageUrl);
+        }
     }
 
     public void deleteProject(Long id) {

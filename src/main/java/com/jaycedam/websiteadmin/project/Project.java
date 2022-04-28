@@ -21,10 +21,24 @@ public class Project {
     private String about;
     private String url;
 
+    @Override
+    public String toString() {
+        return "Project{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", about='" + about + '\'' +
+                ", url='" + url + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
+    }
+
+    private String imageUrl;
+
     public Project(String name, String about, String url, String imageUrl) {
         this.name = name;
         this.about = about;
         this.url = url;
+        this.imageUrl = imageUrl;
     }
 
     public Project() {
@@ -62,14 +76,11 @@ public class Project {
         this.url = url;
     }
 
-    @Override
-    public String toString() {
-        return "Project{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", desc='" + about + '\'' +
-                ", url='" + url + '\'' +
-                '}';
+    public String getImageUrl() {
+        return imageUrl;
     }
 
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }

@@ -31,8 +31,9 @@ public class ProjectController {
     public void updateProject(@PathVariable("id") Long id,
                               @RequestParam(required = false) String name,
                               @RequestParam(required = false) String about,
-                              @RequestParam(required = false) String url) {
-        projectService.updateProject(id, name, about, url);
+                              @RequestParam(required = false) String url,
+                              @RequestParam(required = false) String imageUrl) {
+        projectService.updateProject(id, name, about, url, imageUrl);
 
     }
 
