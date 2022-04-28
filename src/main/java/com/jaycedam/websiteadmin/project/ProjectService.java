@@ -53,7 +53,7 @@ public class ProjectService {
 
         if(imageUrl != null && imageUrl.length() > 0 &&
                 !Objects.equals(project.getUrl(), imageUrl)) {
-            project.setUrl(imageUrl);
+            project.setImageUrl(imageUrl);
         }
     }
 

@@ -20,18 +20,6 @@ public class Project {
     private String name;
     private String about;
     private String url;
-
-    @Override
-    public String toString() {
-        return "Project{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", about='" + about + '\'' +
-                ", url='" + url + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                '}';
-    }
-
     private String imageUrl;
 
     public Project(String name, String about, String url, String imageUrl) {
@@ -82,5 +70,16 @@ public class Project {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", about='" + about + '\'' +
+                ", url='" + url + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
     }
 }
