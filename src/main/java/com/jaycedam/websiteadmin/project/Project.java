@@ -21,17 +21,17 @@ public class Project {
     private String about;
     private String url;
 
-    public Long getId() {
-        return id;
-    }
-
-    public Project(String name, String about, String url) {
+    public Project(String name, String about, String url, String imageUrl) {
         this.name = name;
         this.about = about;
         this.url = url;
     }
 
     public Project() {
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {

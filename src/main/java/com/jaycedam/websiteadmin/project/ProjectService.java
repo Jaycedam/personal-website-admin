@@ -1,6 +1,7 @@
 package com.jaycedam.websiteadmin.project;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -18,7 +19,7 @@ public class ProjectService {
     }
 
     public List<Project> getProjects() {
-        return projectRepository.findAll();
+        return projectRepository.findAll(Sort.by("id"));
     }
 
     public void createProject(Project project) {
