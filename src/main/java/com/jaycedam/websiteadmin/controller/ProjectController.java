@@ -1,12 +1,14 @@
-package com.jaycedam.websiteadmin.project;
+package com.jaycedam.websiteadmin.controller;
 
+import com.jaycedam.websiteadmin.domain.Project;
+import com.jaycedam.websiteadmin.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/projects")
+@RequestMapping(path = "api/projects")
 @CrossOrigin("*")
 public class ProjectController {
 
@@ -30,10 +32,11 @@ public class ProjectController {
     @PutMapping(path = "update/{id}")
     public void updateProject(@PathVariable("id") Long id,
                               @RequestParam(required = false) String name,
+                              @RequestParam(required = false) String technology,
                               @RequestParam(required = false) String about,
                               @RequestParam(required = false) String url,
                               @RequestParam(required = false) String imageUrl) {
-        projectService.updateProject(id, name, about, url, imageUrl);
+        projectService.updateProject(id, name, technology, about, url, imageUrl);
 
     }
 

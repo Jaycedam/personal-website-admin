@@ -1,4 +1,4 @@
-package com.jaycedam.websiteadmin.project;
+package com.jaycedam.websiteadmin.domain;
 
 import javax.persistence.*;
 
@@ -18,18 +18,28 @@ public class Project {
 
     private Long id;
     private String name;
+    private String technology;
     private String about;
     private String url;
     private String imageUrl;
 
-    public Project(String name, String about, String url, String imageUrl) {
+    public Project() {
+    }
+
+    public Project(String name, String technology, String about, String url, String imageUrl) {
         this.name = name;
+        this.technology = technology;
         this.about = about;
         this.url = url;
         this.imageUrl = imageUrl;
     }
 
-    public Project() {
+    public String getTechnology() {
+        return technology;
+    }
+
+    public void setTechnology(String technology) {
+        this.technology = technology;
     }
 
     public Long getId() {
@@ -77,6 +87,7 @@ public class Project {
         return "Project{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", technology='" + technology + '\'' +
                 ", about='" + about + '\'' +
                 ", url='" + url + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +

@@ -1,5 +1,7 @@
-package com.jaycedam.websiteadmin.project;
+package com.jaycedam.websiteadmin.service;
 
+import com.jaycedam.websiteadmin.domain.Project;
+import com.jaycedam.websiteadmin.repo.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,7 @@ public class ProjectService {
     @Transactional
     public void updateProject(Long id,
                               String name,
+                              String technology,
                               String about,
                               String url,
                               String imageUrl) {
@@ -39,6 +42,11 @@ public class ProjectService {
         if(name != null && name.length() > 0 &&
         !Objects.equals(project.getName(), name)) {
             project.setName(name);
+        }
+
+        if(technology != null && technology.length() > 0 &&
+                !Objects.equals(project.getTechnology(), technology)) {
+            project.setTechnology(technology);
         }
 
         if(about != null && about.length() > 0 &&
