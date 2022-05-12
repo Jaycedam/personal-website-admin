@@ -24,19 +24,20 @@ public class ProjectController {
         return projectService.getProjects();
     }
 
+    @GetMapping(path = "starred")
+    public List<Project> getStarredProjects() {
+        return projectService.getStarredProjects();
+    }
+
     @PostMapping
-    public void createStudent(@RequestBody Project project) {
+    public void createProject(@RequestBody Project project) {
         projectService.createProject(project);
     }
 
     @PutMapping(path = "update/{id}")
     public void updateProject(@PathVariable("id") Long id,
-                              @RequestParam(required = false) String name,
-                              @RequestParam(required = false) String technology,
-                              @RequestParam(required = false) String about,
-                              @RequestParam(required = false) String url,
-                              @RequestParam(required = false) String imageUrl) {
-        projectService.updateProject(id, name, technology, about, url, imageUrl);
+                              @RequestBody Project newProject) {
+        projectService.updateProject(id, newProject);
 
     }
 

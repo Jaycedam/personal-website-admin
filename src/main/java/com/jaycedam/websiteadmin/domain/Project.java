@@ -22,16 +22,38 @@ public class Project {
     private String about;
     private String url;
     private String imageUrl;
+    private Boolean starred;
+    @ManyToOne
+    @JoinColumn(name = "area_id")
+    private Area area;
 
     public Project() {
     }
 
-    public Project(String name, String technology, String about, String url, String imageUrl) {
+    public Project(String name, String technology, String about, String url, String imageUrl, Area area, Boolean starred) {
         this.name = name;
         this.technology = technology;
         this.about = about;
         this.url = url;
         this.imageUrl = imageUrl;
+        this.area = area;
+        this.starred = starred;
+    }
+
+    public Boolean getStarred() {
+        return starred;
+    }
+
+    public void setStarred(Boolean starred) {
+        this.starred = starred;
+    }
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
     }
 
     public String getTechnology() {
@@ -91,6 +113,7 @@ public class Project {
                 ", about='" + about + '\'' +
                 ", url='" + url + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
+                ", area=" + area +
                 '}';
     }
 }
