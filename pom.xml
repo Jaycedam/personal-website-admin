@@ -12,7 +12,7 @@
 	<artifactId>website-admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>website-admin</name>
-	<description>Personal Website Back-end</description>
+	<description>Portfolio Back-end</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
