@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/projects")
-@CrossOrigin("*")
+@RequestMapping(path = "api")
 public class ProjectController {
 
     private final ProjectService projectService;
@@ -19,29 +18,29 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
-    @GetMapping
+    @GetMapping(path = "projects")
     public List<Project> getProjects() {
         return projectService.getProjects();
     }
 
-    @GetMapping(path = "starred")
+    @GetMapping(path = "projects/starred")
     public List<Project> getStarredProjects() {
         return projectService.getStarredProjects();
     }
 
-    @PostMapping
+    @PostMapping(path = "project/save")
     public void createProject(@RequestBody Project project) {
         projectService.createProject(project);
     }
 
-    @PutMapping(path = "update/{id}")
+    @PutMapping(path = "project/update/{id}")
     public void updateProject(@PathVariable("id") Long id,
                               @RequestBody Project newProject) {
         projectService.updateProject(id, newProject);
 
     }
 
-    @DeleteMapping(path = "delete/{id}")
+    @DeleteMapping(path = "project/delete/{id}")
     public void deleteProject(@PathVariable("id") Long id) {
         projectService.deleteProject(id);
     }

@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/areas")
-@CrossOrigin("*")
+@RequestMapping(path = "api")
 public class AreaController {
     private final AreaService areaService;
 
@@ -18,23 +17,23 @@ public class AreaController {
         this.areaService = areaService;
     }
 
-    @GetMapping
+    @GetMapping(path = "areas")
     public List<Area> getAreas() {
         return areaService.getAreas();
     }
 
-    @PostMapping
+    @PostMapping(path = "area/save")
     public void createArea(@RequestBody Area area) {
         areaService.createArea(area);
     }
 
-    @PutMapping(path = "update/{id}")
+    @PutMapping(path = "area/update/{id}")
     public void updateArea(@PathVariable("id") Long id,
                            @RequestBody Area area) {
         areaService.updateArea(id, area);
     }
 
-    @DeleteMapping(path = "delete/{id}")
+    @DeleteMapping(path = "area/delete/{id}")
     public void deleteArea(@PathVariable("id") Long id) {
         areaService.deleteArea(id);
     }
