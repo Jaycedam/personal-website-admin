@@ -24,7 +24,7 @@ public class ProjectService {
 
     // CRUD
     public List<Project> getProjects() {
-        return projectRepository.findAll(Sort.by("area"));
+        return projectRepository.findAll(Sort.by("area", "id"));
     }
 
     public List<Project> getStarredProjects() {
