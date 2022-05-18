@@ -24,9 +24,14 @@ public class ProjectController {
         return projectService.getProjects();
     }
 
-    @GetMapping(path = "projects/starred")
-    public List<Project> getStarredProjects() {
-        return projectService.getStarredProjects();
+    @GetMapping(path = "projects/software")
+    public List<Project> getSwStarredProjects() {
+        return projectService.getSwStarredProjects();
+    }
+
+    @GetMapping(path = "projects/motion")
+    public List<Project> getMgStarredProjects() {
+        return projectService.getMgStarredProjects();
     }
 
     @PostMapping(path = "project/save")

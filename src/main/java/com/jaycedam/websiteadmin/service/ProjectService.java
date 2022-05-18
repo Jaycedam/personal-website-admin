@@ -4,7 +4,6 @@ import com.jaycedam.websiteadmin.domain.Project;
 import com.jaycedam.websiteadmin.repo.AreaRepository;
 import com.jaycedam.websiteadmin.repo.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -27,8 +26,12 @@ public class ProjectService {
         return projectRepository.findAllProjects();
     }
 
-    public List<Project> getStarredProjects() {
-        return projectRepository.findAllStarredProjects();
+    public List<Project> getSwStarredProjects() {
+        return projectRepository.findAllSwStarredProjects();
+    }
+
+    public List<Project> getMgStarredProjects() {
+        return projectRepository.findAllMgStarredProjects();
     }
 
     public void createProject(Project project) {
