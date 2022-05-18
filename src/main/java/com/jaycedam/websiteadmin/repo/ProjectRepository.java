@@ -9,7 +9,9 @@ import java.util.List;
 
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Long> {
-    @Query("SELECT a FROM Project a WHERE a.starred = true order by a.area, a.id")
+    @Query("SELECT a FROM Project a WHERE a.starred = true order by a.area, a.id DESC")
     List<Project> findAllStarredProjects();
 
+    @Query("SELECT a FROM Project a order by a.area, a.id DESC")
+    List<Project> findAllProjects();
 }
