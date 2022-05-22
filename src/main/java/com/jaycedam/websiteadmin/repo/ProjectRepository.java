@@ -12,16 +12,10 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
     // All Software Projects (starred)
     @Query("SELECT a " +
             "FROM Project a " +
-            "WHERE a.area = 1 AND a.starred = true " +
+            "WHERE a.starred = true " +
             "order by a.id DESC")
-    List<Project> findAllSwStarredProjects();
+    List<Project> findAllStarredProjects();
 
-    // All Motion Graphics Projects (starred)
-    @Query("SELECT a " +
-            "FROM Project a " +
-            "WHERE a.area = 2 AND a.starred = true " +
-            "order by a.id DESC")
-    List<Project> findAllMgStarredProjects();
 
     // All projects
     @Query("SELECT a " +

@@ -26,13 +26,10 @@ public class ProjectService {
         return projectRepository.findAllProjects();
     }
 
-    public List<Project> getSwStarredProjects() {
-        return projectRepository.findAllSwStarredProjects();
+    public List<Project> getStarredProjects() {
+        return projectRepository.findAllStarredProjects();
     }
 
-    public List<Project> getMgStarredProjects() {
-        return projectRepository.findAllMgStarredProjects();
-    }
 
     public void createProject(Project project) {
         // Checks for area FK before creating project
